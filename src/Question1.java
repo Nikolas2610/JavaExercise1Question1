@@ -1,27 +1,41 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Question1 {
     private static final Random RANDOM = new Random();
-    private static final int THREAD_COUNT = 8;
-    private static final int N = 536870912;
-//private static final int N = 32;
-    public Question1() {
-        long start = System.currentTimeMillis();
+    private static final int N = 1073741824;
+
+    private long hamming = 0;
+//  Get Hamming value
+    public long getHamming() {
+        return hamming;
+    }
+
+//    Set the hamming value
+    public void setHamming(long hamming) {
+        this.hamming = hamming;
+    }
+
+    public Question1(int THREAD_COUNT) {
+        System.out.println("============" + THREAD_COUNT + " THREAD============");
+//       Generate 2 arrays vector
         int[] vector1 = generateVector(N);
         int[] vector2 = generateVector(N);
-//        printVector(vector1);
-//        printVector(vector2);
+//      Divide the array with threads
+
         int batchSize = N / THREAD_COUNT;
 
+//      Create threads array
         ProcessThread[] threads = new ProcessThread[THREAD_COUNT];
+//      Get msec before program start calculate the hamming
+        long start = System.currentTimeMillis();
 
+//      Start Threads to calculate the hamming
         for (int i = 0; i < threads.length; i++) {
-            System.out.println(i);
-            threads[i] = new ProcessThread(vector1, vector2, i*batchSize, batchSize);
+            threads[i] = new ProcessThread(vector1, vector2, i * batchSize, batchSize);
             threads[i].start();
         }
 
+//      Wait the threads to finish
         for (ProcessThread thread : threads) {
             try {
                 // Wait for the threads to finish.
@@ -31,10 +45,19 @@ public class Question1 {
             }
         }
 
+        //   Calculate the sum hamming
+        for (ProcessThread thread : threads) {
+            setHamming(getHamming() + thread.getHamming());
+        }
+
+//      Print the end time to calculation the process time
         long end = System.currentTimeMillis();
-        System.out.println("Duration: " + (end - start) + "msec");
+        System.out.println("Hamming is " + getHamming());
+        System.out.println("Duration for " + THREAD_COUNT + " threads: " + (end - start) + "msec");
+        System.out.println("============END " + THREAD_COUNT + " THREAD============");
     }
 
+    //  Generate vectors function
     public int[] generateVector(int size) {
         int[] vector = new int[size];
 
@@ -44,6 +67,7 @@ public class Question1 {
         return vector;
     }
 
+    //  Print Vector arrays for debug
     public void printVector(int[] vector) {
         StringBuilder vectorString = new StringBuilder("[");
         for (int j : vector) {

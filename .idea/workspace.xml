@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aa189c4-0249-4d85-8f45-4923dcd4f4f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ProcessThread.java" afterDir="false" />
+    <list default="true" id="7aa189c4-0249-4d85-8f45-4923dcd4f4f8" name="Changes" comment="Add thread class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProcessThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProcessThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +52,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Exercise1-Question1" />
-      <option name="VM_PARAMETERS" value="-Xmx6G" />
+      <option name="VM_PARAMETERS" value="-Xmx10G" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -72,8 +72,18 @@
       <workItem from="1666293797672" duration="5679000" />
       <workItem from="1666349724950" duration="5756000" />
       <workItem from="1666356872129" duration="529000" />
-      <workItem from="1666524150009" duration="1994000" />
+      <workItem from="1666524150009" duration="3492000" />
+      <workItem from="1666799745211" duration="2514000" />
+      <workItem from="1666882960778" duration="1588000" />
     </task>
+    <task id="LOCAL-00001" summary="Add thread class">
+      <created>1666526258414</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666526258414</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +99,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add thread class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add thread class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
