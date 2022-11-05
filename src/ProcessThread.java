@@ -26,7 +26,7 @@ public class ProcessThread extends Thread{
     @Override
     public void run() {
 //        Run hamming function and save the hamming
-        setHamming(this.hamming = hamming(vector1, vector2, batchSize, start));
+        setHamming(hamming(vector1, vector2, batchSize, start));
         System.out.println(getName() + " finished.");
     }
 
